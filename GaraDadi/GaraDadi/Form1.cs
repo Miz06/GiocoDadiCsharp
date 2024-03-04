@@ -12,9 +12,15 @@ namespace GaraDadi
 {
     public partial class Form1 : Form
     {
+        Gara gara;
+
         public Form1()
         {
             InitializeComponent();
+            textBox3.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
+            button1.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -24,7 +30,7 @@ namespace GaraDadi
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {//Inserimento giocatore2
-
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
