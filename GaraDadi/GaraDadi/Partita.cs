@@ -10,11 +10,10 @@ namespace GaraDadi
     {
         int punteggioG1, punteggioG2;
 
-        public Partita(Dado dado)
+        public Partita()
         {
             punteggioG1 = 0;
             punteggioG2 = 0;
-            dado = new Dado();
         }
 
         public int AvviaMatch(Dado dado)

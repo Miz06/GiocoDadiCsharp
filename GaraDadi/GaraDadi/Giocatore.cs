@@ -30,6 +30,5 @@ namespace GaraDadi
         {
             get { return nome; }
         }
-
     }
 }

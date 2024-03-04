@@ -43,7 +43,7 @@ namespace GaraDadi
         }
         public void Round()
         {
-            Partita partita = new Partita(dado);
+            Partita partita = new Partita();
             if (partita.AvviaMatch(dado) == 1)
             {
                 g1.IncreasePoints();
@@ -71,5 +71,29 @@ namespace GaraDadi
             numeroPartite = buffer;
         }
 
+        public string G1GetName()
+        {
+            return g1.GetName;
+        }
+
+        public string G2GetName()
+        {
+            return g2.GetName;
+        }
+
+        public int G1GetPoints()
+        {
+            return g1.GetPoints;
+        }
+
+        public int G2GetPoints()
+        {
+            return g2.GetPoints;
+        }
+
+        public int GetNumeroGenerato()
+        {
+            return dado.GetNumero;
+        }
     }
 }

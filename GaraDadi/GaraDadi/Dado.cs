@@ -9,15 +9,22 @@ namespace GaraDadi
     internal class Dado
     {
         Random randomNumber;
+        int num;
 
         public Dado()
         {
-             randomNumber = new Random();
+            randomNumber = new Random();
         }
 
         public int GeneraNumero()
         {
-            return randomNumber.Next(1, 7);
+            num = randomNumber.Next(1, 7);
+            return num;
+        }
+
+        public int GetNumero
+        {
+            get { return num; }
         }
     }
 }
