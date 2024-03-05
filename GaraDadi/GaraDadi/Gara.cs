@@ -10,7 +10,6 @@ namespace GaraDadi
     {
         Giocatore g1;
         Giocatore g2;
-        Dado dado;
         int numeroPartite, buffer;
         string winner, loser;
 
@@ -20,8 +19,7 @@ namespace GaraDadi
             g2 = new Giocatore(_g2);
             numeroPartite = _numeroPartite; //partite da giocare
             buffer = _numeroPartite; //utilizzo buffer per tenere memorizzate le partite inserite ad inizio gara
-            dado = new Dado(); //ogni gara ha il suo dado
-            winner = string.Empty; 
+            winner = string.Empty;
             loser = string.Empty;
         }
 
@@ -41,14 +39,16 @@ namespace GaraDadi
         {
             return winner;
         }
+
         public void Round()
         {
             Partita partita = new Partita();
-            if (partita.AvviaMatch(dado) == 1)
+
+            if (partita.AvviaMatch(g1, g2) == 1)
             {
                 g1.IncreasePoints();
             }
-            else if (partita.AvviaMatch(dado) == 2)
+            else if (partita.AvviaMatch(g1, g2) == 2)
             {
                 g2.IncreasePoints();
             }
@@ -91,9 +91,14 @@ namespace GaraDadi
             return g2.GetPoints;
         }
 
-        public int GetNumeroGenerato()
+        public int G1GetNum()
         {
-            return dado.GetNumero;
+            return g1.GetNumero();
+        }
+
+        public int G2GetNum()
+        {
+            return g2.GetNumero();
         }
     }
 }

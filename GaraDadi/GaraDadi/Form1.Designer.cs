@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -72,18 +71,9 @@
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(304, 274);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(532, 323);
+            this.textBox4.Location = new System.Drawing.Point(66, 324);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
@@ -112,7 +102,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 6;
-            this.button1.Text = "ROLL DICE";
+            this.button1.Text = "AVVIA MATCH";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -131,11 +121,12 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Location = new System.Drawing.Point(62, 66);
+            this.label1.Location = new System.Drawing.Point(65, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "Inserire giocatore1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -163,7 +154,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(65, 323);
+            this.textBox5.Location = new System.Drawing.Point(570, 319);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
             this.textBox5.TabIndex = 11;
@@ -187,17 +178,19 @@
             this.label5.Size = new System.Drawing.Size(74, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "CURRENT";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(532, 390);
+            this.textBox7.Location = new System.Drawing.Point(67, 390);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 22);
             this.textBox7.TabIndex = 14;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged_1);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(96, 390);
+            this.textBox8.Location = new System.Drawing.Point(559, 390);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 22);
             this.textBox8.TabIndex = 15;
@@ -211,6 +204,7 @@
             this.label6.Size = new System.Drawing.Size(112, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "Numero generato";
+            this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
             // label7
             // 
@@ -220,6 +214,7 @@
             this.label7.Size = new System.Drawing.Size(112, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Numero generato";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // Form1
             // 
@@ -243,13 +238,13 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +254,6 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button1;

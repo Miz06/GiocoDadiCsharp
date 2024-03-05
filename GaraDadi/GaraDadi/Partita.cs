@@ -8,26 +8,20 @@ namespace GaraDadi
 {
     internal class Partita
     {
-        int punteggioG1, punteggioG2;
-
         public Partita()
         {
-            punteggioG1 = 0;
-            punteggioG2 = 0;
         }
 
-        public int AvviaMatch(Dado dado)
-        {//lancio dadi di Giocatore1me
-            int lancioG1, lancioG2;
+        public int AvviaMatch(Giocatore g1, Giocatore g2)
+        {//avvio partita tra giocatori
+            g1.LanciaDado();
+            g2.LanciaDado();
 
-            lancioG1 = dado.GeneraNumero();
-            lancioG2 = dado.GeneraNumero();
-
-            if (lancioG1 > lancioG2)
+            if (g1.GetDado > g2.GetDado)
             {
                 return 1;
             }
-            else if (lancioG1 < lancioG2)
+            else if (g1.GetDado < g2.GetDado)
             {
                 return 2;
             }

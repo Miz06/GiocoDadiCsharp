@@ -10,11 +10,13 @@ namespace GaraDadi
     {
         string nome;
         int punteggioCorrente;
+        Dado dado;
 
         public Giocatore(string _nome)
         {
             nome = _nome;
-            punteggioCorrente= 0;
+            punteggioCorrente = 0;
+            dado = new Dado(6);
         }
 
         public void IncreasePoints()
@@ -22,13 +24,29 @@ namespace GaraDadi
             punteggioCorrente++;
         }
 
+        public void LanciaDado()
+        {
+            dado.LancioDado();
+        }
+
         public int GetPoints
         {
             get { return punteggioCorrente; }
         }
+
         public string GetName
         {
             get { return nome; }
+        }
+
+        public Dado GetDado
+        {
+            get { return dado; }
+        }
+
+        public int GetNumero()
+        {
+            return dado.GetNum;
         }
     }
 }
