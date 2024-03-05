@@ -29,6 +29,10 @@ namespace GaraDadi
             dado.LancioDado();
         }
 
+        public void ResettaPunteggio()
+        {
+            punteggioCorrente = 0;
+        }
         public int GetPoints
         {
             get { return punteggioCorrente; }

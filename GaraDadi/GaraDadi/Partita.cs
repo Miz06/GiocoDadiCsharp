@@ -29,7 +29,6 @@ namespace GaraDadi
             {
                 return 0;
             }
-
         }
     }
 }

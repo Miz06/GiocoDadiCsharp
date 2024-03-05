@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GaraDadi
 {
@@ -18,17 +19,23 @@ namespace GaraDadi
         public Form1()
         {
             InitializeComponent();
+
+            textBox3.Visible = false;
             textBox4.Visible = false;
             textBox5.Visible = false;
             textBox7.Visible = false;
             textBox8.Visible = false;
 
             button1.Visible = false;
+            button4.Visible = false;
 
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
+
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -56,20 +63,48 @@ namespace GaraDadi
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {//AVVIA MATCH
             gara.Round();
 
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            for (int i = 1; i<7; i++)
+            {
+                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{i}.jpg")); //imageList1.Images[n] sfuoca le immagini
+                pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{7 - i}.jpg")); //imageList1.Images[n] sfuoca le immagini
+
+                await Task.Delay(500);
+            }
+
+            pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G1GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
+            pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G2GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
+        
             textBox7.Text = Convert.ToString(gara.G1GetNum());
             textBox8.Text = Convert.ToString(gara.G2GetNum());
 
             textBox4.Text = Convert.ToString(gara.G1GetPoints());
             textBox5.Text = Convert.ToString(gara.G2GetPoints());
+
+            if (gara.FineGara())
+            {
+                textBox3.Visible = true;
+                textBox3.Text = gara.GameWin();
+
+                button1.Visible = false;
+            }
+
+            textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {//START GAME
-            this.BackgroundImage = Image.FromFile("C:\\Users\\aless\\OneDrive\\Desktop\\GiocoDadiCsharp\\GaraDadi\\unnamed1.jpg");
+            this.BackgroundImage = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "unnamed1.jpg"));
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
 
             label1.Visible = false;
@@ -78,6 +113,7 @@ namespace GaraDadi
 
             button2.Visible = false; //bottone START GAMEE
             button1.Visible = true;
+            button4.Visible = true;
 
             label4.Visible = true;
             label5.Visible = true;
@@ -167,6 +203,51 @@ namespace GaraDadi
 
         private void label7_Click_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            pictureBox3.Visible = false;
+            label8.Visible= false;
+            button3.Visible= false;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            gara.ResetGame();
+
+            textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
+            textBox7.Text = "";
+            textBox8.Text = "";
+
+            textBox4.Text = Convert.ToString(0);
+            textBox5.Text = Convert.ToString(0);
 
         }
     }
