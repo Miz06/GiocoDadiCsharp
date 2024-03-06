@@ -248,11 +248,10 @@ namespace GaraDadi
 
         }
 
-        private async void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {//FARE CLICK PER INIZIARE
 
             pictureBox3.Visible = false;
-            label8.Visible = false;
             button3.Visible = false;
         }
 
