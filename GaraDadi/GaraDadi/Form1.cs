@@ -20,6 +20,8 @@ namespace GaraDadi
         {
             InitializeComponent();
 
+            AumentaFormGradualmente();
+
             textBox3.Visible = false;
             textBox4.Visible = false;
             textBox5.Visible = false;
@@ -33,6 +35,7 @@ namespace GaraDadi
             label5.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
+            label9.Visible = false;
 
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -64,7 +67,7 @@ namespace GaraDadi
         }
 
         private async void button1_Click(object sender, EventArgs e)
-        {//AVVIA MATCH
+        {//LANCIA DADI
             gara.Round();
 
             pictureBox1.Visible = true;
@@ -93,37 +96,55 @@ namespace GaraDadi
             if (gara.FineGara())
             {
                 textBox3.Visible = true;
-                textBox3.Text = gara.GameWin();
+
+                if (gara.GameWin() == "pareggio")
+                {
+                    textBox3.Text = "PAREGGIO";
+                }
+                else
+                {
+                    textBox3.Text = ($"VINCITORE: {gara.GameWin()}");
+                }
 
                 button1.Visible = false;
+                button4.Visible = false;
             }
 
             textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {//START GAME
-            this.BackgroundImage = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "unnamed1.jpg"));
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox6.Text == "")
+            {
+                label9.Visible = true;
+                await Task.Delay(2000);
+                label9.Visible = false;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "unnamed1.jpg"));
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+                gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
 
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Text = "PARTITE RIMANENTI";
+                label1.Visible = false;
+                label2.Visible = false;
+                label3.Text = "PARTITE RIMANENTI";
 
-            button2.Visible = false; //bottone START GAMEE
-            button1.Visible = true;
-            button4.Visible = true;
+                button2.Visible = false; //bottone START GAME
+                button1.Visible = true;
+                button4.Visible = true;
 
-            label4.Visible = true;
-            label5.Visible = true;
-            label6.Visible = true;
-            label7.Visible = true;
+                label4.Visible = true;
+                label5.Visible = true;
+                label6.Visible = true;
+                label7.Visible = true;
 
-            textBox4.Visible = true;
-            textBox5.Visible = true;
-            textBox7.Visible = true;
-            textBox8.Visible = true;
+                textBox4.Visible = true;
+                textBox5.Visible = true;
+                textBox7.Visible = true;
+                textBox8.Visible = true;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -136,15 +157,16 @@ namespace GaraDadi
 
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox5_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {//numero generato da giocatore 2
@@ -226,11 +248,12 @@ namespace GaraDadi
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
+        private async void button3_Click_1(object sender, EventArgs e)
+        {//FARE CLICK PER INIZIARE
+
             pictureBox3.Visible = false;
-            label8.Visible= false;
-            button3.Visible= false;
+            label8.Visible = false;
+            button3.Visible = false;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -239,7 +262,7 @@ namespace GaraDadi
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {//RESET GAME
             gara.ResetGame();
 
             textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
@@ -248,6 +271,39 @@ namespace GaraDadi
 
             textBox4.Text = Convert.ToString(0);
             textBox5.Text = Convert.ToString(0);
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AumentaFormGradualmente()
+        {
+            this.Opacity = 0;
+
+            // Gradualmente aumenta l'opacità del form
+            for (double opacity = 0; opacity <= 1; opacity += 0.1)
+            {
+                this.Opacity = opacity;
+                this.Refresh();
+                await Task.Delay(50); 
+            }
+        }
+
+        private async void DiminuisciFormGradualmente()
+        {
+            // Gradualmente diminuisce l'opacità del form
+            for (double opacity = 1; opacity >= 0; opacity -= 0.5)
+            {
+                this.Opacity = opacity;
+                await Task.Delay(100);
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
 
         }
     }
