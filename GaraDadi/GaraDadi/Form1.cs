@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Xml.Serialization;
 
 namespace GaraDadi
 {
@@ -123,15 +124,16 @@ namespace GaraDadi
             }
             else
             {
-                this.BackgroundImage = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "unnamed1.jpg"));
-                this.BackgroundImageLayout = ImageLayout.Stretch;
+                AumentaFormGradualmente();
+                pictureBox4.Visible = false;
+
                 gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
 
                 label1.Visible = false;
                 label2.Visible = false;
                 label3.Text = "PARTITE RIMANENTI";
 
-                button2.Visible = false; //bottone START GAME
+                button2.Visible = false;
                 button1.Visible = true;
                 button4.Visible = true;
 
@@ -250,9 +252,10 @@ namespace GaraDadi
 
         private void button3_Click_1(object sender, EventArgs e)
         {//FARE CLICK PER INIZIARE
-
             pictureBox3.Visible = false;
             button3.Visible = false;
+
+            AumentaFormGradualmente();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -293,15 +296,32 @@ namespace GaraDadi
 
         private async void DiminuisciFormGradualmente()
         {
+            this.Opacity = 1;
+
             // Gradualmente diminuisce l'opacità del form
-            for (double opacity = 1; opacity >= 0; opacity -= 0.5)
+            for (double opacity = 1; opacity >= 0; opacity -= 0.1)
             {
                 this.Opacity = opacity;
-                await Task.Delay(100);
+                await Task.Delay(50);
             }
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
 
         }
