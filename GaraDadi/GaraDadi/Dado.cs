@@ -15,7 +15,7 @@ namespace GaraDadi
 
         public Dado(int _facce)
         {
-            randomNumber = new Random();
+            randomNumber = new Random(DateTime.Now.Millisecond);
             facce = _facce;
         }
 
