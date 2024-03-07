@@ -23,20 +23,8 @@ namespace GaraDadi
 
             AumentaFormGradualmente();
 
-            textBox3.Visible = false;
-            textBox4.Visible = false;
-            textBox5.Visible = false;
-            textBox7.Visible = false;
-            textBox8.Visible = false;
-
-            button1.Visible = false;
-            button4.Visible = false;
-
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
             label9.Visible = false;
+            label8.Visible = false;
 
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
@@ -77,38 +65,44 @@ namespace GaraDadi
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            for (int i = 1; i<7; i++)
+            //Ciclo per lo scorrimento delle immagini nelle PictureBox
+            for (int i = 1; i < 7; i++)
             {
                 pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{i}.jpg")); //imageList1.Images[n] sfuoca le immagini
                 pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{7 - i}.jpg")); //imageList1.Images[n] sfuoca le immagini
- 
+
                 await Task.Delay(500);
             }
 
             pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G1GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
             pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G2GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
-        
+
+            //Numeri lanciati dai giocatori
             textBox7.Text = Convert.ToString(gara.G1GetNum());
             textBox8.Text = Convert.ToString(gara.G2GetNum());
 
+            //Punti correnti dei giocatori
             textBox4.Text = Convert.ToString(gara.G1GetPoints());
             textBox5.Text = Convert.ToString(gara.G2GetPoints());
 
             if (gara.FineGara())
             {
-                textBox3.Visible = true;
+                label8.Visible = true;
 
                 if (gara.GameWin() == "pareggio")
                 {
-                    textBox3.Text = "PAREGGIO";
+                    label8.Text = "PAREGGIO";
                 }
                 else
                 {
-                    textBox3.Text = ($"VINCITORE: {gara.GameWin()}");
+                    label8.Text = ($"IL VINCITORE E' {gara.GameWin()}!");
                 }
 
                 button1.Visible = false;
                 button4.Visible = false;
+
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = false;
             }
 
             textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
@@ -118,34 +112,45 @@ namespace GaraDadi
         {//START GAME
             if (textBox1.Text == "" || textBox2.Text == "" || textBox6.Text == "")
             {
+                //Visualizzo il mesaggio di errore per 2 secondi
+                label9.Text = "Tutti i campi devono essere compilati prima di poter giocare!";
                 label9.Visible = true;
                 await Task.Delay(2000);
                 label9.Visible = false;
             }
             else
             {
-                AumentaFormGradualmente();
-                pictureBox4.Visible = false;
+                if (textBox6.Text.Any(char.IsDigit) == true)
+                {
+                    AumentaFormGradualmente();
 
-                gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
+                    pictureBox4.Visible = false;
+                    button2.Visible = false;
+                    label3.Text = "PARTITE RIMANENTI";
 
-                label1.Visible = false;
-                label2.Visible = false;
-                label3.Text = "PARTITE RIMANENTI";
+                    gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
+                }
+                else if (textBox1.Text == textBox2.Text)
+                {
+                    textBox1.Text = "";
+                    textBox2.Text = "";
 
-                button2.Visible = false;
-                button1.Visible = true;
-                button4.Visible = true;
+                    //Visualizzo il mesaggio di errore per 2 secondi
+                    label9.Text = "I nomi dei giocatori devono essere differenti!";
+                    label9.Visible = true;
+                    await Task.Delay(2000);
+                    label9.Visible = false;
+                }
+                else
+                {
+                    textBox6.Text = "";
 
-                label4.Visible = true;
-                label5.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-
-                textBox4.Visible = true;
-                textBox5.Visible = true;
-                textBox7.Visible = true;
-                textBox8.Visible = true;
+                    //Visualizzo il mesaggio di errore per 2 secondi
+                    label9.Text = "Valore inserito non valido!";
+                    label9.Visible = true;
+                    await Task.Delay(2000);
+                    label9.Visible = false;
+                }
             }
         }
 
@@ -171,7 +176,7 @@ namespace GaraDadi
 
 
         private void textBox8_TextChanged(object sender, EventArgs e)
-        {//numero generato da giocatore 2
+        {
 
         }
 
@@ -191,7 +196,7 @@ namespace GaraDadi
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {//lancio dado giocatore2
+        {
 
         }
 
@@ -211,7 +216,7 @@ namespace GaraDadi
         }
 
         private void textBox7_TextChanged_1(object sender, EventArgs e)
-        {//numero generato da giocatore 1
+        {
 
         }
 
@@ -267,13 +272,14 @@ namespace GaraDadi
         {//RESET GAME
             gara.ResetGame();
 
-            textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
+            textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti); //Reimposto le partite rimanenti con quelle che l'utente ha specificato di voler giocare precedentemente
+            
+            //Imposto tutti i campi eventualmente cambiati con rispettivamente "" o 0
             textBox7.Text = "";
             textBox8.Text = "";
 
             textBox4.Text = Convert.ToString(0);
             textBox5.Text = Convert.ToString(0);
-
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -290,7 +296,7 @@ namespace GaraDadi
             {
                 this.Opacity = opacity;
                 this.Refresh();
-                await Task.Delay(50); 
+                await Task.Delay(50);
             }
         }
 

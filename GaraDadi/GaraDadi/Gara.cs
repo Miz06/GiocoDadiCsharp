@@ -43,12 +43,13 @@ namespace GaraDadi
         public void Round()
         {
             Partita partita = new Partita();
+            int num = partita.AvviaMatch(g1, g2);
 
-            if (partita.AvviaMatch(g1, g2) == 1)
+            if (num == 1)
             {
                 g1.IncreasePoints();
             }
-            else if (partita.AvviaMatch(g1, g2) == 2)
+            else if (num == 2)
             {
                 g2.IncreasePoints();
             }
