@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Xml.Serialization;
+using System.Reflection.Emit;
 
 namespace GaraDadi
 {
@@ -91,11 +92,11 @@ namespace GaraDadi
 
                 if (gara.GameWin() == "pareggio")
                 {
-                    label8.Text = "PAREGGIO";
+                    label8.Text = "TIE";
                 }
                 else
                 {
-                    label8.Text = ($"IL VINCITORE E' {gara.GameWin()}!");
+                    label8.Text = ($"THE WINNER IS {gara.GameWin()}!");
                 }
 
                 button1.Visible = false;
@@ -110,10 +111,17 @@ namespace GaraDadi
 
         private async void button2_Click(object sender, EventArgs e)
         {//START GAME
+
+            label1.Text = "PLAYER 1";
+            label2.Text = "PLAYER 2";
+
+            textBox4.Text = Convert.ToString(0);
+            textBox5.Text = Convert.ToString(0);
+
             if (textBox1.Text == "" || textBox2.Text == "" || textBox6.Text == "")
             {
                 //Visualizzo il mesaggio di errore per 2 secondi
-                label9.Text = "Tutti i campi devono essere compilati prima di poter giocare!";
+                label9.Text = "All fields must be filled before you can play!";
                 label9.Visible = true;
                 await Task.Delay(2000);
                 label9.Visible = false;
@@ -126,7 +134,7 @@ namespace GaraDadi
 
                     pictureBox4.Visible = false;
                     button2.Visible = false;
-                    label3.Text = "PARTITE RIMANENTI";
+                    label3.Text = "REMAINING MATCHES";
 
                     gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
                 }
@@ -136,7 +144,7 @@ namespace GaraDadi
                     textBox2.Text = "";
 
                     //Visualizzo il mesaggio di errore per 2 secondi
-                    label9.Text = "I nomi dei giocatori devono essere differenti!";
+                    label9.Text = "Player's names must be different";
                     label9.Visible = true;
                     await Task.Delay(2000);
                     label9.Visible = false;
@@ -273,7 +281,11 @@ namespace GaraDadi
             gara.ResetGame();
 
             textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti); //Reimposto le partite rimanenti con quelle che l'utente ha specificato di voler giocare precedentemente
-            
+
+            //I dadi appena lanciati scompaiono
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+
             //Imposto tutti i campi eventualmente cambiati con rispettivamente "" o 0
             textBox7.Text = "";
             textBox8.Text = "";
