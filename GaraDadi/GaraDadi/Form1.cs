@@ -59,6 +59,7 @@ namespace GaraDadi
         {//LANCIA DADI
             gara.Round();
 
+            button4.Enabled = false;
             pictureBox1.Visible = true;
             pictureBox2.Visible = true;
 
@@ -68,14 +69,14 @@ namespace GaraDadi
             //Ciclo per lo scorrimento delle immagini nelle PictureBox
             for (int i = 1; i < 7; i++)
             {
-                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{i}.jpg")); //imageList1.Images[n] sfuoca le immagini
-                pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{7 - i}.jpg")); //imageList1.Images[n] sfuoca le immagini
+                pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"Images\\{i}.jpg")); //imageList1.Images[n] sfuoca le immagini
+                pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"Images\\{7 - i}.jpg")); //imageList1.Images[n] sfuoca le immagini
 
                 await Task.Delay(500);
             }
 
-            pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G1GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
-            pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"{gara.G2GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
+            pictureBox1.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"Images\\{gara.G1GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
+            pictureBox2.Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, $"Images\\{gara.G2GetNum()}.jpg")); //imageList1.Images[n] sfuoca le immagini
 
             //Numeri lanciati dai giocatori
             textBox7.Text = Convert.ToString(gara.G1GetNum());
@@ -106,6 +107,7 @@ namespace GaraDadi
             }
 
             textBox6.Text = Convert.ToString(gara.GetPartiteRimanenti);
+            button4.Enabled = true;
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -247,7 +249,6 @@ namespace GaraDadi
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -270,7 +271,6 @@ namespace GaraDadi
 
         private void label8_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button4_Click(object sender, EventArgs e)

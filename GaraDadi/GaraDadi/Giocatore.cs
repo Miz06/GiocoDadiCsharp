@@ -33,6 +33,7 @@ namespace GaraDadi
         {
             punteggioCorrente = 0;
         }
+
         public int GetPoints
         {
             get { return punteggioCorrente; }

@@ -46,7 +46,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -68,7 +67,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(48, 99);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
@@ -116,7 +115,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(340, 244);
+            this.button1.Location = new System.Drawing.Point(362, 235);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -157,7 +156,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 10;
-            this.label2.Text = "INSERT PLAYER 1";
+            this.label2.Text = "INSERT PLAYER 2";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -243,20 +242,6 @@
             this.label7.Text = "DICE FACE";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "istockphoto-184297434-612x612.jpg");
-            this.imageList1.Images.SetKeyName(1, "poker-table-green-cloth-on-dark-background-illustration-free-vector.jpg");
-            this.imageList1.Images.SetKeyName(2, "IMG-20240305-WA0003(2).jpg");
-            this.imageList1.Images.SetKeyName(3, "1.jpg");
-            this.imageList1.Images.SetKeyName(4, "2.jpg");
-            this.imageList1.Images.SetKeyName(5, "3.jpg");
-            this.imageList1.Images.SetKeyName(6, "4.jpg");
-            this.imageList1.Images.SetKeyName(7, "5.jpg");
-            this.imageList1.Images.SetKeyName(8, "6.jpg");
             // 
             // pictureBox1
             // 
@@ -444,7 +429,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button3;

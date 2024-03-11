@@ -20,3 +20,13 @@ C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadi\GaraDadi\obj\Debug\Gara
 C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadi\GaraDadi\obj\Debug\GaraDadi.csproj.CoreCompileInputs.cache
 C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadi\GaraDadi\obj\Debug\GaraDadi.exe
 C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadi\GaraDadi\obj\Debug\GaraDadi.pdb
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\bin\Debug\GaraDadi.exe.config
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\bin\Debug\GaraDadi.exe
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\bin\Debug\GaraDadi.pdb
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.csproj.AssemblyReference.cache
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.Form1.resources
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.Properties.Resources.resources
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.csproj.GenerateResource.cache
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.csproj.CoreCompileInputs.cache
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.exe
+C:\Users\studente\Desktop\GaraDadi\GaraDadi\obj\Debug\GaraDadi.pdb

@@ -15,7 +15,7 @@ namespace GaraDadi
 
         public Dado(int _facce)
         {
-            randomNumber = new Random(DateTime.Now.Millisecond);
+            randomNumber = new Random(Guid.NewGuid().GetHashCode()); //Guid.NewGuid().GetHashCode() SERVE A UTILIZZARE UN RANDOM CON UN SEME DI GENERAZIONE DIVERSO
             facce = _facce;
         }
 
