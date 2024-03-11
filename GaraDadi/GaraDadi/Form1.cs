@@ -301,22 +301,10 @@ namespace GaraDadi
             this.Opacity = 0;
 
             // Gradualmente aumenta l'opacità del form
-            for (double opacity = 0; opacity <= 1; opacity += 0.1)
+            for (double opacity = 0; opacity < 1; opacity += 0.1)
             {
                 this.Opacity = opacity;
                 this.Refresh();
-                await Task.Delay(50);
-            }
-        }
-
-        private async void DiminuisciFormGradualmente()
-        {
-            this.Opacity = 1;
-
-            // Gradualmente diminuisce l'opacità del form
-            for (double opacity = 1; opacity >= 0; opacity -= 0.1)
-            {
-                this.Opacity = opacity;
                 await Task.Delay(50);
             }
         }
