@@ -69,10 +69,10 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(35, 99);
+            this.textBox1.Location = new System.Drawing.Point(48, 99);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 23);
+            this.textBox1.Size = new System.Drawing.Size(116, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -81,30 +81,31 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(635, 99);
+            this.textBox2.Location = new System.Drawing.Point(650, 99);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 23);
+            this.textBox2.Size = new System.Drawing.Size(116, 23);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(70, 342);
+            this.textBox4.Location = new System.Drawing.Point(53, 342);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(69, 23);
+            this.textBox4.Size = new System.Drawing.Size(67, 23);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox6.Location = new System.Drawing.Point(306, 64);
+            this.textBox6.Location = new System.Drawing.Point(328, 64);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(205, 23);
+            this.textBox6.Size = new System.Drawing.Size(188, 23);
             this.textBox6.TabIndex = 5;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
@@ -126,7 +127,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(70, 391);
+            this.button2.Location = new System.Drawing.Point(84, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 38);
             this.button2.TabIndex = 7;
@@ -139,11 +140,12 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Location = new System.Drawing.Point(35, 69);
+            this.label1.Location = new System.Drawing.Point(48, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "INSERT PLAYER 1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -151,11 +153,12 @@
             this.label2.AutoSize = true;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Location = new System.Drawing.Point(635, 69);
+            this.label2.Location = new System.Drawing.Point(650, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "INSERT PLAYER 1";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -163,76 +166,82 @@
             this.label3.AutoSize = true;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Location = new System.Drawing.Point(320, 42);
+            this.label3.Location = new System.Drawing.Point(328, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 18);
+            this.label3.Size = new System.Drawing.Size(188, 18);
             this.label3.TabIndex = 10;
-            this.label3.Text = "ENTER NUMBER OF GAMES";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Text = "ENTER NUMBER OF MATCHES";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(670, 341);
+            this.textBox5.Location = new System.Drawing.Point(689, 342);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(69, 23);
+            this.textBox5.Size = new System.Drawing.Size(67, 23);
             this.textBox5.TabIndex = 11;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 322);
+            this.label4.Location = new System.Drawing.Point(53, 322);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "CURRENT";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(672, 322);
+            this.label5.Location = new System.Drawing.Point(689, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "CURRENT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(48, 418);
+            this.textBox7.Location = new System.Drawing.Point(118, 410);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(131, 23);
+            this.textBox7.Size = new System.Drawing.Size(70, 23);
             this.textBox7.TabIndex = 14;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged_1);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(641, 418);
+            this.textBox8.Location = new System.Drawing.Point(641, 410);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(131, 23);
+            this.textBox8.Size = new System.Drawing.Size(70, 23);
             this.textBox8.TabIndex = 15;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 391);
+            this.label6.Location = new System.Drawing.Point(118, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "DICE FACE";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(643, 391);
+            this.label7.Location = new System.Drawing.Point(641, 391);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "DICE FACE";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // imageList1
@@ -299,9 +308,11 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(646, 469);
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(277, 126);
+            this.pictureBox3.Size = new System.Drawing.Size(808, 498);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 21;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -398,12 +409,12 @@
             this.Controls.Add(this.pictureBox5);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gioco dadi ";
+            this.Text = "The Dice Game";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

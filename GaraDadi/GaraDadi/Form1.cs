@@ -21,7 +21,6 @@ namespace GaraDadi
         public Form1()
         {
             InitializeComponent();
-
             AumentaFormGradualmente();
 
             label9.Visible = false;
@@ -111,10 +110,6 @@ namespace GaraDadi
 
         private async void button2_Click(object sender, EventArgs e)
         {//START GAME
-
-            label1.Text = "PLAYER 1";
-            label2.Text = "PLAYER 2";
-
             textBox4.Text = Convert.ToString(0);
             textBox5.Text = Convert.ToString(0);
 
@@ -134,6 +129,8 @@ namespace GaraDadi
 
                     pictureBox4.Visible = false;
                     button2.Visible = false;
+                    label1.Text = "PLAYER 1";
+                    label2.Text = "PLAYER 2";
                     label3.Text = "REMAINING MATCHES";
 
                     gara = new Gara(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox6.Text));
@@ -154,7 +151,7 @@ namespace GaraDadi
                     textBox6.Text = "";
 
                     //Visualizzo il mesaggio di errore per 2 secondi
-                    label9.Text = "Valore inserito non valido!";
+                    label9.Text = "Invalid value entered!";
                     label9.Visible = true;
                     await Task.Delay(2000);
                     label9.Visible = false;
