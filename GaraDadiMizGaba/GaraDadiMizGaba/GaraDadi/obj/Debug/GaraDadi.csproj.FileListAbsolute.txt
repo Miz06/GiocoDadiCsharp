@@ -52,3 +52,14 @@ C:\Users\aless\OneDrive\Desktop\GaraDadiMizGaba-20240312T093049Z-001\GaraDadiMiz
 C:\Users\aless\OneDrive\Desktop\GaraDadiMizGaba-20240312T093049Z-001\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.csproj.CoreCompileInputs.cache
 C:\Users\aless\OneDrive\Desktop\GaraDadiMizGaba-20240312T093049Z-001\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.exe
 C:\Users\aless\OneDrive\Desktop\GaraDadiMizGaba-20240312T093049Z-001\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.pdb
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\bin\Debug\GaraDadi.exe.config
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\bin\Debug\GaraDadi.exe
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\bin\Debug\GaraDadi.pdb
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.csproj.AssemblyReference.cache
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.csproj.SuggestedBindingRedirects.cache
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.Form1.resources
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.Properties.Resources.resources
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.csproj.GenerateResource.cache
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.csproj.CoreCompileInputs.cache
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.exe
+C:\Users\aless\OneDrive\Desktop\GiocoDadiCsharp\GaraDadiMizGaba\GaraDadiMizGaba\GaraDadi\obj\Debug\GaraDadi.pdb

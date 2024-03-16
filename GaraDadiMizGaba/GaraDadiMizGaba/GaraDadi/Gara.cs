@@ -71,11 +71,6 @@ namespace GaraDadi
             }
         }
 
-        public string GetWinner
-        {
-            get { return winner; }
-        }
-
         public void ResetGame()
         {
             numeroPartite = buffer;
@@ -113,6 +108,10 @@ namespace GaraDadi
             return g2.GetPoints;
         }
 
+        public string GetWinner
+        {
+            get { return winner; }
+        }
 
         public int GetPartiteRimanenti
         {
